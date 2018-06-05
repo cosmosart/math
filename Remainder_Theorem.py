@@ -8,4 +8,5 @@ def synthetic_division(x,equation_coff):
     
     return(output[:-1], output[-1])
 
-##Polynomial remainder theorem
+# Polynomial remainder theorem
+## https://en.wikipedia.org/wiki/Polynomial_remainder_theorem
