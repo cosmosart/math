@@ -7,3 +7,5 @@ def synthetic_division(x,equation_coff):
         division = x * y
     
     return(output[:-1], output[-1])
+
+##Polynomial remainder theorem
