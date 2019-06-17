@@ -9,6 +9,7 @@ def sansuExe(type="K", numberOfExec = 10):
     T = plus
     H = minus
     K = product(product table)
+    D = divide
 
     numberOfExec = number of exercise integer number
 
