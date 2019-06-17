@@ -67,7 +67,24 @@ def sansuExe(type="K", numberOfExec = 10):
                 num += 1
             else:
                 print(f"ぷーぶ {a} - {b} = {a-b}")
-                correct.update({i+1:"X"})          
+                correct.update({i+1:"X"})
+    elif type=="D" or type == "d":
+        for i in range(numberOfExec):
+            b = np.random.randint(2,9)
+            a = np.random.randint(2,9) * b
+            c = input(f"{a} / {b} = ")
+            try:
+                c = int(c)
+            except:
+                print("Enter a Number")
+                c = input(f"{a} / {b} =")    
+            if a / b == c:
+                print("OK")
+                correct.update({i+1:"OK"})
+                num += 1
+            else:
+                print(f"ぷーぶ {a} x {b} = {a*b}")
+                correct.update({i+1:"X"})
     else:
         print("Check your input")
     return f"Total {num}/{numberOfExec}", correct
