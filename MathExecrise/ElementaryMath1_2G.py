@@ -1,4 +1,4 @@
-def sansuExe(type="K", numberOfExec = 10):
+def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boundaryC = 9):
     """
     Math exercise for 1st and 2nd grade of Japanese elementary students
 
@@ -11,6 +11,17 @@ def sansuExe(type="K", numberOfExec = 10):
     K = product(product table)
     D = divide
 
+    boundary are random integer number boundary for exercise
+    boundaryA for plus and minus, boundaryA for first number boundary for second number
+    boundaryA + boundaryB  
+    or 
+    boundaryA - boundaryB
+    
+    boundaryC for product and divide 
+    boundaryC * boundaryC 
+    or
+    (boundaryC * boundaryC) / boundaryC
+
     numberOfExec = number of exercise integer number
 
     """
@@ -20,8 +31,8 @@ def sansuExe(type="K", numberOfExec = 10):
 
     if type=="T" or type =="t":
         for i in range(numberOfExec):
-            a = np.random.randint(10,150)
-            b = np.random.randint(10,200)
+            a = np.random.randint(boundaryC,boundaryA)
+            b = np.random.randint(boundaryC,boundaryB)
             c = input(f"{a} + {b} = ")
             try:
                 c = int(c)
@@ -37,8 +48,8 @@ def sansuExe(type="K", numberOfExec = 10):
                 correct.update({i+1:"X"})
     elif type=="K" or type=="k":
         for i in range(numberOfExec):
-            a = np.random.randint(2,9)
-            b = np.random.randint(2,9)
+            a = np.random.randint(2,boundaryC)
+            b = np.random.randint(2,boundaryC)
             c = input(f"{a} x {b} = ")
             try:
                 c = int(c)
@@ -54,7 +65,7 @@ def sansuExe(type="K", numberOfExec = 10):
                 correct.update({i+1:"X"})
     elif type=="H" or type == "h":
         for i in range(numberOfExec):
-            a = np.random.randint(10,150)
+            a = np.random.randint(10,boundaryA)
             b = np.random.randint(1,a)
             c = input(f"{a} - {b} = ")
             try:
@@ -71,8 +82,8 @@ def sansuExe(type="K", numberOfExec = 10):
                 correct.update({i+1:"X"})
     elif type=="D" or type == "d":
         for i in range(numberOfExec):
-            b = np.random.randint(2,9)
-            a = np.random.randint(2,9) * b
+            b = np.random.randint(2,boundaryC)
+            a = np.random.randint(2,boundaryC) * b
             c = input(f"{a} / {b} = ")
             try:
                 c = int(c)
