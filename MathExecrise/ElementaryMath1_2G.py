@@ -72,8 +72,9 @@ def sansuExe(type="K", numberOfExec = 10):
         print("Check your input")
     return f"Total {num}/{numberOfExec}", correct
 
-if __name__ == "__main":
+if __name__ == "__main__":
     tOe = input("足し算は　T を、くくは　K を入れてください。")
     try:    nOe = int(input("何回練習しましょうか"))
-    except:    print("数字を入れてください。"); nOe = int(input("何回練習しましょうか "))
+    except:    print("数字を入れてください。"); nOe = int(input("何回練習しましょうか  "))
     sansuExe(tOe, nOe)
+
