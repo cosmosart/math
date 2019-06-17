@@ -29,7 +29,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
     correct = {}
     num = 0
 
-    if type=="T" or type =="t":
+    if type=="P" or type =="p":
         for i in range(numberOfExec):
             a = np.random.randint(boundaryC,boundaryA)
             b = np.random.randint(boundaryC,boundaryB)
@@ -46,7 +46,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
             else:
                 print(f"ぷーぶ {a} + {b} = {a+b}")
                 correct.update({i+1:"X"})
-    elif type=="K" or type=="k":
+    elif type=="T" or type=="t":
         for i in range(numberOfExec):
             a = np.random.randint(2,boundaryC)
             b = np.random.randint(2,boundaryC)
@@ -63,7 +63,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
             else:
                 print(f"ぷーぶ {a} x {b} = {a*b}")
                 correct.update({i+1:"X"})
-    elif type=="H" or type == "h":
+    elif type=="M" or type == "m":
         for i in range(numberOfExec):
             a = np.random.randint(10,boundaryA)
             b = np.random.randint(1,a)
@@ -102,7 +102,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
     return f"Total {num}/{numberOfExec}", correct
 
 if __name__ == "__main__":
-    tOe = input("足し算は　T を、くくは　K を入れてください。")
+    tOe = input("足し算は　P を、くくは　T を入れてください。")
     try:    nOe = int(input("何回練習しましょうか"))
     except:    print("数字を入れてください。"); nOe = int(input("何回練習しましょうか  "))
     sansuExe(tOe, nOe)
