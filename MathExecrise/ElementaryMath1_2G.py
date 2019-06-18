@@ -5,7 +5,7 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     Usage
     sansuExe(type, numberOfExec)
     
-    type
+    Type
     T = plus
     H = minus
     K = product(product table)
