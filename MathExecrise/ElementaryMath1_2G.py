@@ -1,4 +1,4 @@
-def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB = 200, boundaryC = 9):
+def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB = 200, boundaryC = 9, id = 0):
     """
     Math exercise for 1st and 2nd grade of Japanese elementary students
 
@@ -28,7 +28,8 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     import numpy as np
     correct = {}
     num = 0
-    # if lang =
+    # if id != 0:
+
     type = type.upper()
 
     if type=="P":
