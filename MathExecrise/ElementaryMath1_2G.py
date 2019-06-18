@@ -1,4 +1,4 @@
-def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boundaryC = 9):
+def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB = 200, boundaryC = 9):
     """
     Math exercise for 1st and 2nd grade of Japanese elementary students
 
@@ -28,8 +28,10 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
     import numpy as np
     correct = {}
     num = 0
+    # if lang =
+    type = type.upper()
 
-    if type=="P" or type =="p":
+    if type=="P":
         for i in range(numberOfExec):
             a = np.random.randint(boundaryC,boundaryA)
             b = np.random.randint(boundaryC,boundaryB)
@@ -44,9 +46,9 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
                 correct.update({i+1:"OK"})
                 num += 1
             else:
-                print(f"ぷーぶ {a} + {b} = {a+b}")
+                print(f"X {a} + {b} = {a+b}")
                 correct.update({i+1:"X"})
-    elif type=="T" or type=="t":
+    elif type=="T":
         for i in range(numberOfExec):
             a = np.random.randint(2,boundaryC)
             b = np.random.randint(2,boundaryC)
@@ -61,9 +63,9 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
                 correct.update({i+1:"OK"})
                 num += 1
             else:
-                print(f"ぷーぶ {a} x {b} = {a*b}")
+                print(f"X {a} x {b} = {a*b}")
                 correct.update({i+1:"X"})
-    elif type=="M" or type == "m":
+    elif type=="M":
         for i in range(numberOfExec):
             a = np.random.randint(10,boundaryA)
             b = np.random.randint(1,a)
@@ -78,9 +80,9 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
                 correct.update({i+1:"OK"})
                 num += 1
             else:
-                print(f"ぷーぶ {a} - {b} = {a-b}")
+                print(f"X {a} - {b} = {a-b}")
                 correct.update({i+1:"X"})
-    elif type=="D" or type == "d":
+    elif type=="D":
         for i in range(numberOfExec):
             b = np.random.randint(2,boundaryC)
             a = np.random.randint(2,boundaryC) * b
@@ -95,7 +97,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
                 correct.update({i+1:"OK"})
                 num += 1
             else:
-                print(f"ぷーぶ {a} x {b} = {a*b}")
+                print(f"X {a} / {b} = {int(a/b)}")
                 correct.update({i+1:"X"})
     else:
         print("Check your input")
@@ -103,7 +105,7 @@ def sansuExe(type="K", numberOfExec = 10, boundaryA = 150, boundaryB = 200, boun
 
 if __name__ == "__main__":
     tOe = input("足し算は　P を、くくは　T を入れてください。")
-    try:    nOe = int(input("何回練習しましょうか"))
-    except:    print("数字を入れてください。"); nOe = int(input("何回練習しましょうか  "))
+    try:    nOe = int(input("何回練習しましょうか？ "))
+    except:    print("数字を入れてください。"); nOe = int(input("何回練習しましょうか？ "))
     sansuExe(tOe, nOe)
 
