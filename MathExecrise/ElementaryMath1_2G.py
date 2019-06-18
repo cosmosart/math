@@ -24,6 +24,10 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
 
     numberOfExec = number of exercise integer number
 
+    id = user ID
+    id 0 for guest
+    default = 0 
+
     """
     import numpy as np
     correct = {}
