@@ -1,0 +1,15 @@
+"""
+Math exercise for 1st and 2nd grade of Japanese elementary students
+
+Usage
+sansuExe(type, numberOfExec)
+
+type
+T = plus
+H = minus
+K = product(product table)
+D = divide
+
+numberOfExec = number of exercise integer number
+
+"""
