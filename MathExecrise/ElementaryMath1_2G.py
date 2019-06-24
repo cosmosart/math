@@ -1,4 +1,4 @@
-def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB = 200, boundaryC = 9, id = 0):
+def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB = 200, boundaryC = 10, id = 0):
     """
     Math exercise for 1st and 2nd grade of Japanese elementary students
 
@@ -17,6 +17,7 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     or 
     boundaryA - boundaryB
     
+
     boundaryC for product and divide 
     boundaryC * boundaryC 
     or
@@ -27,19 +28,23 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     id = user ID
     id 0 for guest
     default = 0 
-
     """
     import numpy as np
     correct = {}
     num = 0
-    # if id != 0:
+    a = []
 
     type = type.upper()
-
+    noRepet = []
     if type=="P":
         for i in range(numberOfExec):
             a = np.random.randint(boundaryC,boundaryA)
             b = np.random.randint(boundaryC,boundaryB)
+            while (a,b) in noRepet:
+                a = np.random.randint(boundaryC,boundaryA)
+                b = np.random.randint(boundaryC,boundaryB)
+            noRepet.append((a,b))
+
             c = input(f"{a} + {b} = ")
             try:
                 c = int(c)
@@ -54,9 +59,14 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
                 print(f"X {a} + {b} = {a+b}")
                 correct.update({i+1:"X"})
     elif type=="T":
+        if nOe > 64:
+            numberOfExec = int(input("Max number of exercise is 64 for KuKu "))
         for i in range(numberOfExec):
             a = np.random.randint(2,boundaryC)
             b = np.random.randint(2,boundaryC)
+            while [a,b] in noRepet:
+                a = np.random.randint(2,boundaryC)
+                b = np.random.randint(2,boundaryC)
             c = input(f"{a} x {b} = ")
             try:
                 c = int(c)
