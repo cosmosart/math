@@ -32,7 +32,6 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     import numpy as np
     correct = {}
     num = 0
-    a = []
 
     type = type.upper()
     noRepet = []
