@@ -28,6 +28,8 @@ def sansuExe(type="K", numberOfExec = 10, lang="J", boundaryA = 150, boundaryB =
     id = user ID
     id 0 for guest
     default = 0 
+
+    Good Luck
     """
     import numpy as np
     correct = {}
